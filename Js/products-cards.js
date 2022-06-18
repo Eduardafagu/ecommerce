@@ -27,10 +27,13 @@ function initProductsCard(selector, products) {
         price.innerText = format(product.price)
         detail.innerText = product.detail
         const footer = document.createElement('footer')
-        const remove = document.createElement('button')
-        remove.innerText = 'Adcionar'
+        const add = document.createElement('button')
+        add.innerText = 'Adcionar'
+        add.onclick= function(){
+            cart.addProduct(product) 
+        }
 
-        footer.append(remove)
+        footer.append(add)
         info.append(name, detail, price, footer)
         card.append(info);
 
